@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.BiblioX.Views.MainPage"
+             Title="Genres">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="ToolbarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource 
+                    FontFamily="MaterialIcons-Regular"
+                    Glyph="&#xe7fd;" 
+                    Color="White"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Margin="20">
+
+        <!-- Entry dans un Border pour obtenir un border radius -->
+        <Border Background="#ececec"
+                StrokeShape="RoundRectangle 30"
+                Padding="0"
+                Margin="0, 0, 0, 20">
+            
+            <Entry Placeholder="Rechercher..." BackgroundColor="Transparent" />
+            
+        </Border>
+
+        <ListView x:Name="lv"
+                  ItemsSource="{Binding GenresItems}"
+                  RowHeight="80"
+                  BackgroundColor="White"
+                  SeparatorColor="Transparent"
+                  ItemSelected="lv_ItemSelected" >
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                
+                        <Grid BackgroundColor="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                                
+                            <Image Source="folder.png"
+                                    Aspect="AspectFit"
+                                    HeightRequest="70"
+                                    Margin="0, 0, 20, 0" />
+                            
+                            <Label Grid.Column="1"
+                                    Text="{Binding Nom}"
+                                    FontAttributes="Bold"
+                                    VerticalOptions="Center"
+                                    FontSize="14" />
+                                
+                        </Grid>
+                     
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>

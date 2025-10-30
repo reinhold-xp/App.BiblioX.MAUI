@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.BiblioX.Views.GenrePage"
+             Title="GenresPage">
+    <ListView x:Name="lv" 
+            ItemsSource="{Binding LivresItems}"
+            Margin="0,15"
+            RowHeight="60"
+            BackgroundColor="White"
+            SeparatorColor="Transparent"
+            ItemSelected="lv_ItemSelected" >
+        <ListView.ItemTemplate>
+            <DataTemplate >
+                <ImageCell
+                    ImageSource="folder.png"
+                    Text="{Binding Titre}"
+                    TextColor="#323a45"
+                    Detail="{Binding Auteur}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
