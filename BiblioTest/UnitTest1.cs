@@ -1,5 +1,5 @@
-﻿using App.BiblioX.Interfaces;
-using App.BiblioX.Models;
+﻿using App.BiblioX.Domain.Interfaces;
+using App.BiblioX.Domain.Models;
 using App.BiblioX.ViewModels;
 using Moq;
 

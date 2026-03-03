@@ -1,6 +1,6 @@
-﻿using App.BiblioX.Interfaces;
-using App.BiblioX.Models;
-using App.BiblioX.Services;
+﻿using App.BiblioX.Domain.Interfaces;
+using App.BiblioX.Domain.Models;
+using App.BiblioX.Domain.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;

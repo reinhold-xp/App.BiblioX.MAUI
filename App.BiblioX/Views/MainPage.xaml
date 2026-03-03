@@ -5,7 +5,7 @@
              Title="Genres">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Clicked="ToolbarItem_Clicked">
+        <ToolbarItem x:Name="tbTest" Clicked="ToolbarItem_Clicked">
             <ToolbarItem.IconImageSource>
                 <FontImageSource 
                     FontFamily="MaterialIcons-Regular"

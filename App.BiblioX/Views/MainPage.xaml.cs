@@ -1,5 +1,5 @@
-using App.BiblioX.Interfaces;
-using App.BiblioX.Models;
+using App.BiblioX.Domain.Models;
+using App.BiblioX.Domain.Interfaces;
 using App.BiblioX.ViewModels;
 
 namespace App.BiblioX.Views;
@@ -13,8 +13,6 @@ public partial class MainPage : ContentPage
 
         _genresVM = genres;
         BindingContext = _genresVM;
-
-        // Charger les genres au démarrage de la page...
         _genresVM.LoadGenres();
     }
 

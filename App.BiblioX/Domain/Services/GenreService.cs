@@ -1,7 +1,7 @@
-﻿using App.BiblioX.Interfaces;
-using App.BiblioX.Models;
+﻿using App.BiblioX.Domain.Interfaces;
+using App.BiblioX.Domain.Models;
 
-namespace App.BiblioX.Services
+namespace App.BiblioX.Domain.Services
 {
     public class GenreService : IGenreService
     {

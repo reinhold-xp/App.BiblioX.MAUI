@@ -1,4 +1,4 @@
-using App.BiblioX.Models;
+using App.BiblioX.Domain.Models;
 using App.BiblioX.ViewModels;
 using System.Runtime.CompilerServices;
 

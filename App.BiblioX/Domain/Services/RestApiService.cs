@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Text.Json;
 
-namespace App.BiblioX.Services
+namespace App.BiblioX.Domain.Services
 {
     public class RestApiService
     {

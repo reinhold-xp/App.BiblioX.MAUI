@@ -1,5 +1,5 @@
-﻿using App.BiblioX.Interfaces;
-using App.BiblioX.Services;
+﻿using App.BiblioX.Domain.Interfaces;
+using App.BiblioX.Domain.Services;
 using App.BiblioX.ViewModels;
 using App.BiblioX.Views;
 using Microsoft.Extensions.Configuration;
