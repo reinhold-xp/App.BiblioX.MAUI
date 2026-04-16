@@ -13,13 +13,8 @@ public partial class MainPage : ContentPage
 
         _genresVM = genres;
         BindingContext = _genresVM;
-        _genresVM.LoadGenres();
-    }
 
-    private async void lv_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-    {
-        var selectedGenre = (Genre)e.SelectedItem;
-        await Navigation.PushAsync(new GenrePage(selectedGenre, _genresVM));
+        _genresVM.LoadGenres();
     }
 
     private void ToolbarItem_Clicked(object sender, EventArgs e)

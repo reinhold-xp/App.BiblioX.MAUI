@@ -9,7 +9,7 @@
             RowHeight="60"
             BackgroundColor="White"
             SeparatorColor="Transparent"
-            ItemSelected="lv_ItemSelected" >
+            SelectedItem="{Binding SelectedBook}">
         <ListView.ItemTemplate>
             <DataTemplate >
                 <ImageCell

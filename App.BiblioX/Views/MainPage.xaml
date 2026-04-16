@@ -32,7 +32,7 @@
                   RowHeight="80"
                   BackgroundColor="White"
                   SeparatorColor="Transparent"
-                  ItemSelected="lv_ItemSelected" >
+                  SelectedItem="{Binding SelectedGenre}">
             
             <ListView.ItemTemplate>
                 <DataTemplate>

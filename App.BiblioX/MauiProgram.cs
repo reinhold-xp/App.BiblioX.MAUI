@@ -29,6 +29,7 @@ namespace App.BiblioX
             builder.Configuration.AddJsonFile("AppSettings.json", optional: false, reloadOnChange: true); // Charger la configuration depuis AppSettings.json
             builder.Services.AddSingleton<RestApiService>();
             builder.Services.AddSingleton<IGenreService, GenreService>();
+            builder.Services.AddSingleton<INavigationService, NavigationService>();
 
             // Injection des ViewModels
             builder.Services.AddTransient<GenresViewModel>(); 
