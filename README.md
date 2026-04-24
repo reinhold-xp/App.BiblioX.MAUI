@@ -1,8 +1,6 @@
 # Biblio.MAUI
 
 ![Tests](https://img.shields.io/badge/tests-xUnit%20%2B%20Moq-green)
-![Aperçu de Biblio](https://github.com/reinhold-xp/App.BiblioX.MAUI/blob/master/App.BiblioX/Resources/Images/biblio.png)
-
 Application multiplateforme conçue pour interagir avec une API REST et structurée dans une architecture inspirée des principes **SOLID**
 
 ---
