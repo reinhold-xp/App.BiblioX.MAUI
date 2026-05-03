@@ -15,8 +15,6 @@ namespace App.BiblioX.ViewModels
         private readonly IGenreService _genreService;
         private readonly INavigationService _navigationService;
    
-        public ICommand OnItemSelectedCommand {get;}
-
         [ObservableProperty]
         private ObservableCollection<Genre> ?genresItems;
 
@@ -29,10 +27,13 @@ namespace App.BiblioX.ViewModels
         [ObservableProperty]
         private Livre selectedBook;
 
+        public bool IsInDetailMode { get; set; }
+
         public GenresViewModel(IGenreService genreService, INavigationService navigationService)
         {
             _genreService = genreService;
             _navigationService = navigationService;
+
              LoadGenres();
      
         }
@@ -56,7 +57,8 @@ namespace App.BiblioX.ViewModels
         }
         private async Task SelectGenreAsync(Genre genre)
         {
-            await _navigationService.NavigateToGenrePage(genre);
+            if(!IsInDetailMode)
+                await _navigationService.NavigateToGenrePage(genre);
         }
 
         private async Task SelectBookAsync(Livre book)
@@ -81,6 +83,7 @@ namespace App.BiblioX.ViewModels
             {
                 var livres = await _genreService.GetLivresByGenreAsync(genreId);
                 LivresItems = new ObservableCollection<Livre>(livres);
+                
             }
             catch (Exception ex)
             {

@@ -1,5 +1,6 @@
 ﻿using App.BiblioX.Domain.Interfaces;
 using App.BiblioX.Domain.Models;
+using App.BiblioX.Domain.Services;
 using App.BiblioX.ViewModels;
 using App.BiblioX.Views;
 using System;
@@ -29,17 +30,19 @@ namespace App.BiblioX.Domain.Services
             // on peut résoudre le GenresViewModel à la volée,
             // toutes ses dépendances (services, repositories, etc.) sont injectées automatiquement
             var vm = _serviceProvider.GetRequiredService<GenresViewModel>();
+            vm.IsInDetailMode = true;
+            vm.SelectedGenre = selectedGenre;
+            vm.LoadBooks(selectedGenre.Id); 
 
-     
             // Navigation via Shell : on utilise la pile de navigation gérée par Shell.Current.
             // Shell garantit une pile stable et toujours disponible, contrairement à l’ancienne
             // navigation basée sur Application.Current.MainPage (iNavigation) 
             //
             // Ici, on empile (PushAsync) une nouvelle page GenrePage 
-        
+
             // Ce mécanisme déclenche l’affichage de la page tout en conservant l’historique
             // de navigation pour permettre un retour arrière (PopAsync).
-            await Shell.Current.Navigation.PushAsync(new GenrePage(selectedGenre, vm));
+            await Shell.Current.Navigation.PushAsync(new GenrePage(vm));
         }
 
         public async Task NavigateToResumePage(Livre selectedBook)
